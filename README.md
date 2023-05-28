@@ -1,5 +1,6 @@
 # .comUnity
 MERN Social Media App for College Campus
+connect with peers,alumnis and college communities!
 ## Installation
 
 get started by downloading node_modules into both client & server directories
