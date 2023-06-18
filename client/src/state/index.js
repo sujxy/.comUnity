@@ -6,7 +6,8 @@ const initialState = {
   user: null,
   token: null,
   allPosts: [],
-
+  chats: [],
+  currentChat: null,
   allComunitys: [],
 };
 
@@ -64,6 +65,12 @@ export const authSlice = createSlice({
     setPageType: (state, action) => {
       state.pageType = action.payload.pageType;
     },
+    setChats: (state, action) => {
+      state.chats = action.payload.chats;
+    },
+    setCurrentChat: (state, action) => {
+      state.currentChat = action.payload.currentChat;
+    },
   },
 });
 
@@ -77,5 +84,7 @@ export const {
   setUserComunity,
   setPageType,
   setComunitys,
+  setChats,
+  setCurrentChat,
 } = authSlice.actions;
 export default authSlice.reducer;
