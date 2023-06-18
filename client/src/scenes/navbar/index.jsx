@@ -166,14 +166,21 @@ const Navbar = () => {
             justifyContent="center"
             gap="5rem"
           >
-            <IconButton>
-              <HomeRounded
-                sx={{ fontSize: "22px" }}
-                onClick={() => navigate("/home")}
-              />
+            <IconButton
+              onClick={() => {
+                navigate("/home");
+                dispatch(setPageType({ pageType: "home" }));
+              }}
+            >
+              <HomeRounded sx={{ fontSize: "22px" }} />
             </IconButton>
 
-            <IconButton>
+            <IconButton
+              onClick={() => {
+                navigate(`/create`);
+                dispatch(setPageType({ pageType: "comunity" }));
+              }}
+            >
               <Groups2Rounded sx={{ fontSize: "22px" }} />
             </IconButton>
 
@@ -185,11 +192,21 @@ const Navbar = () => {
               )}
             </IconButton>
 
-            <IconButton>
+            <IconButton
+              onClick={() => {
+                navigate("/messages");
+                dispatch(setPageType({ pageType: "message" }));
+              }}
+            >
               <MailRounded sx={{ fontSize: "22px" }} />
             </IconButton>
 
-            <IconButton>
+            <IconButton
+              onClick={() => {
+                navigate(`/profile/${user._id}`);
+                dispatch(setPageType({ pageType: "profile" }));
+              }}
+            >
               <PersonRounded sx={{ fontSize: "22px" }} />
             </IconButton>
           </FlexBetween>
